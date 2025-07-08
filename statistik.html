@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* --- Import Font & Pengaturan Dasar --- */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin: 0;
+            padding: 20px;
+        }
+
+        
+
+        /* --- Layout Grid Dashboard Utama --- */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            grid-template-areas:
+                "earnings tasks pending-request pending-request"
+                "statistic-overview statistic-overview revenue overview"
+                "statistic-overview statistic-overview projects projects";
+        }
+        
+        /* --- Desain Kartu (Card) --- */
+        .card {
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+        
+        /* --- Penempatan Grid Area untuk Setiap Kartu --- */
+        .earnings { grid-area: earnings; border-left: 5px solid #3498db; }
+        .tasks { grid-area: tasks; border-left: 5px solid #f1c40f; }
+        .pending-request { grid-area: pending-request; border-left: 5px solid #3498db; }
+        .statistic-overview { grid-area: statistic-overview; }
+        .revenue { grid-area: revenue; }
+        .projects { grid-area: projects; }
+        .overview { grid-area: overview; }
+
+        /* --- Konten di Dalam Kartu --- */
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #7f8c8d;
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .card-header i {
+            font-size: 20px;
+        }
+
+        .card-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        /* --- Progress Bar --- */
+        .progress-bar-container {
+            height: 8px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        /* Warna progress bar spesifik */
+        .tasks .progress-bar-inner { background-color: #f1c40f; }
+        .projects .progress-bar-inner { background-color: #e74c3c; }
+        
+        /* --- Gambar Placeholder untuk Grafik --- */
+        .statistic-overview img, .revenue img, .overview img {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+        
+        /* --- Styling untuk Kartu Projects --- */
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #7f8c8d;
+        }
+
+        .project-item:not(:first-of-type) {
+            margin-top: 15px;
+        }
+        @media (max-width: 1024px) {
+            .dashboard {
+                grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+                grid-template-areas:
+                    "earnings tasks"
+                    "pending-request pending-request"
+                    "statistic-overview statistic-overview"
+                    "revenue overview"
+                    "projects projects";
+            }
+        }
+
+        /* --- Tampilan Ponsel (max-width: 768px) --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .main-header {
+                padding: 10px 15px;
+            }
+            .main-nav ul {
+                justify-content: center; /* Pusatkan navigasi */
+            }
+            .main-nav li {
+                margin: 0 10px;
+            }
+            .dashboard {
+                display: flex; /* Ubah dari grid ke flexbox */
+                flex-direction: column; /* Tumpuk semua kartu secara vertikal */
+            }
+        }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <header>
+        <nav class="navbar navbar-expand-lg p-2 navbar-gradient fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" style="font-weight: 500;">CyberFortress</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto " style="font-size: 1.4rem; padding-right: 25px;">
+                        <li class="nav-item pe-4">
+                            <a class="nav-link" aria-current="page" href="index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item pe-4">
+                            <a class="nav-link" href="kuis.html">Kuis</a>
+                        </li>
+                        <li class="nav-item pe-4">
+                            <a class="nav-link" href="statistik.html">Statistik</a>
+                        </li>
+                        <li class="nav-item pe-4">
+                            <a class="nav-link" href="video.html">Video</a>
+                        </li>
+                        <li class="nav-item pe-4">
+                            <a class="nav-link" href="hubungikami.html">Hubungi Kami</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard" style="margin-top: 5rem;">
+        <div class="card earnings">
+            <div class="card-content">
+                <div class="card-header">
+                    <span>EARNINGS (MONTHLY)</span>
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <p class="card-value">$40,000</p>
+            </div>
+        </div>
+
+        <div class="card tasks">
+            <div class="card-content">
+                <div class="card-header">
+                    <span>QUIZ</span>
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <p class="card-value">20%</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-inner" style="width: 20%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card pending-request">
+            <div class="card-content">
+                <div class="card-header">
+                    <span>PENDING REQUEST</span>
+                    <i class="fas fa-comments"></i>
+                </div>
+                <p class="card-value">13</p>
+            </div>
+        </div>
+
+        <div class="card statistic-overview">
+            <h3>Statistic Overview</h3>
+            <img src="Screenshot 2025-06-29 201629.png" alt="Statistic Graph">
+        </div>
+
+        <div class="card revenue">
+            <h3>Revenue</h3>
+            <img src="revenue.png" alt="Revenue Chart">
+        </div>
+
+        <div class="card projects">
+            <h3>Projects</h3>
+            <div class="project-item">
+                <span>Server on</span>
+                <span>50%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-inner" style="width: 50%;"></div>
+            </div>
+            <div class="project-item">
+                <span>Sales Data</span>
+                <span>30%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-inner" style="width: 30%;"></div>
+            </div>
+            <div class="project-item">
+                <span>Payout Detail</span>
+                <span>20%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-inner" style="width: 20%;"></div>
+            </div>
+        </div>
+
+        <div class="card overview">
+            <h3>Overview</h3>
+            <img src="overview.png" alt="Overview Bars">
+        </div>
+    </main>
+
+</body>
+</html>
