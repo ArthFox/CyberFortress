@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hubungi Kami - CyberFortress</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e6e6e6;
+    }
+
+    /* Header */
+    header {
+      background-color: #b9a5a5;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      background-color: #333;
+      border-radius: 50%;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    /* Main */
+    main {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    hr {
+      width: 50%;
+      border: 1px solid #a49c9c;
+      margin: 20px auto;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .form-box, .info-box {
+      background-color: #ddd2d2;
+      padding: 20px;
+      width: 350px;
+      box-sizing: border-box;
+    }
+
+    .form-box label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    .form-box input, .form-box textarea {
+      width: 100%;
+      padding: 10px;
+      background-color: #bcbcbc;
+      border: none;
+    }
+
+    .form-box button {
+      margin-top: 20px;
+      padding: 10px 30px;
+      background-color: #b9a5a5;
+      border: 1px solid #654949;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .info-box {
+      text-align: left;
+    }
+
+    .info-box p {
+      margin: 10px 0;
+    }
+
+    .info-box img {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 15px;
+      }
+
+      main {
+        padding: 20px 10px;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-box, .info-box {
+        width: 90%;
+      }
+
+      .form-box input, .form-box textarea {
+        font-size: 16px;
+      }
+
+      .form-box button {
+        width: 100%;
+      }
+
+      .info-box {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 10px 20px;
+      }
+
+      .logo {
+        width: 40px;
+        height: 40px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .form-box button {
+        font-size: 16px;
+      }
+
+      .info-box p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Kuis</a>
+      <a href="#">Statistik</a>
+      <a href="#">Video</a>
+      <a href="#" class="active">Hubungi Kami</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Hubungi Kami</h1>
+    <p>Jangan ragu untuk menghubungi kami dan<br>temukan solusi terbaik untuk kebutuhan anda.</p>
+    <hr>
+
+    <div class="container">
+      <!-- Form -->
+      <div class="form-box">
+        <form>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="3"></textarea>
+
+          <button type="submit">submit</button>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="info-box">
+        <p>📞 +62 821-8888-4422</p>
+        <p>Email:</p>
+        <p>📩 info@cyberfortress.id</p>
+        <p>📩 support@cyberfortress.id</p>
+        <p>📩 admin.cyberfortress@gmail.com</p>
+
+        <p>Social Media:</p>
+        <p>Instagram: @CyberFortressID</p>
+        <p>Facebook: @CyberFortressID</p>
+        <p>TikTok: @CyberFortressID</p>
+        <p>X (Twitter): @CyberFortressID</p>
+        <p>YouTube: @CyberFortressID</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
