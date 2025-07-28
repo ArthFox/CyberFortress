@@ -7,6 +7,7 @@ CyberFortress adalah sebuah web yang ditujukan untuk menambah wawasan dan ilmu m
 untuk mengambil data kita, yang mana dapat sangat merugikan diri kita sendiri. Oleh sebab itu CyberFortress ada.
 
 Kelas: SI03
+
 Anggota:
 1. James Arthur Chrisitianno/24.12.3237
 2. Rafi Wibowo/24.12.3233
