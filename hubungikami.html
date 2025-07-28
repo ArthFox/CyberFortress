@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hubungi Kami - CyberFortress</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   <style>
+    body {
+      margin: 0;
+      background-color: #e6e6e6;
+    }
+
+
     /* Main */
     main {
       padding: 30px;
@@ -30,11 +37,13 @@
       margin-top: 30px;
     }
 
-    .form-box, .info-box {
-      background-color: #ddd2d2;
-      padding: 20px;
-      width: 350px;
+    .form-box,
+    .info-box {
+      background-color: #f0e6e6;
+      padding: 30px 25px;
+      width: 370px;
       box-sizing: border-box;
+      border-radius: 8px;
     }
 
     .form-box label {
@@ -42,22 +51,32 @@
       margin-top: 15px;
       margin-bottom: 5px;
       text-align: left;
+      font-weight: bold;
     }
 
-    .form-box input, .form-box textarea {
+    .form-box input,
+    .form-box textarea {
       width: 100%;
-      padding: 10px;
-      background-color: #bcbcbc;
+      padding: 12px;
+      background-color: #c2c2c2;
       border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-box textarea {
+      resize: none;
+      height: 100px;
     }
 
     .form-box button {
-      margin-top: 20px;
-      padding: 10px 30px;
+      margin-top: 25px;
+      padding: 12px 30px;
       background-color: #b9a5a5;
       border: 1px solid #654949;
-      border-radius: 20px;
+      border-radius: 25px;
       cursor: pointer;
+      font-weight: bold;
     }
 
     .info-box {
@@ -68,12 +87,50 @@
       margin: 10px 0;
     }
 
-    .info-box img {
-      vertical-align: middle;
-      margin-right: 5px;
+    footer.footer-kustom {
+      background-color: #fff5b9;
+      padding: 30px 20px 10px;
+      color: #333;
+    }
+
+    .footer-kustom .footer-container {
+      display: flex;
+      justify-content: flex-start;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .footer-kiri {
+      max-width: 400px;
+      padding-left: 40px;
+    }
+
+    .footer-kustom hr {
+      border: 0.5px solid #c1bfbf;
+      margin-top: 30px;
+    }
+
+    .footer-bawah {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .form-box,
+      .info-box {
+        width: 100%;
+      }
+
+      .footer-kiri {
+        padding-left: 20px;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
     }
   </style>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
@@ -84,7 +141,7 @@
             <a class="navbar-brand" href="#">
                 <a class="navbar-brand" style="font-weight: 500;">CyberFortress</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -109,38 +166,36 @@
         </div>
     </nav>
 </header>
-
   <!-- Main Content -->
-  <main class="mt-5">
+  <main style="margin-top: 5rem;">
     <h1>Hubungi Kami</h1>
-    <p>Jangan ragu untuk menghubungi kami dan<br>temukan solusi terbaik untuk kebutuhan anda.</p>
+    <p>Jangan ragu untuk menghubungi kami dan<br />temukan solusi terbaik untuk kebutuhan anda.</p>
+    <hr />
 
     <div class="container">
       <!-- Form -->
-      <div class="form-box tutorial-card">
+      <div class="form-box">
         <form>
           <label for="nama">Nama</label>
-          <input type="text" id="nama" name="nama">
+          <input type="text" id="nama" name="nama" required />
 
           <label for="email">Email</label>
-          <input type="email" id="email" name="email">
+          <input type="email" id="email" name="email" required />
 
           <label for="pesan">Pesan</label>
-          <textarea id="pesan" name="pesan" rows="3"></textarea>
+          <textarea id="pesan" name="pesan" required></textarea>
 
-          <button type="submit">submit</button>
+          <button type="submit">Kirim</button>
         </form>
       </div>
 
       <!-- Info -->
-      <div class="info-box tutorial-card">
+      <div class="info-box">
         <p>📞 +62 821-8888-4422</p>
-        <p>Email:</p>
         <p>📩 info@cyberfortress.id</p>
         <p>📩 support@cyberfortress.id</p>
         <p>📩 admin.cyberfortress@gmail.com</p>
-
-        <p>Social Media:</p>
+        <br />
         <p>Instagram: @CyberFortressID</p>
         <p>Facebook: @CyberFortressID</p>
         <p>TikTok: @CyberFortressID</p>
@@ -150,5 +205,22 @@
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer class="footer-kustom">
+    <div class="footer-container">
+      <div class="footer-kiri">
+        <h3>Tentang Kami</h3>
+        <p>Rafi Wibowo / 24.12.3233</p>
+        <p>Aditya Aji Nugroho / 24.12.3236</p>
+        <p>James Arthur Christianno / 24.12.3237</p>
+        <p>Dede Afuansyah / 24.12.3239</p>
+        <p>Muhammad Adam / 24.12.3270</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bawah">
+      <p>&copy; 2025 CyberFortress | All Rights Reserved</p>
+    </div>
+  </footer>
 </body>
 </html>
