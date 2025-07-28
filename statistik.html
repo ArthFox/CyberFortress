@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
     <style>
         body {
@@ -19,16 +20,17 @@
 
         .navbar-gradient {
             background: linear-gradient(to right, rgba(255, 255, 255, 0.75)); 
-            box-shadow: 0 4px 8px black;
         }
 
-        .navbar-brand, .nav-link {
-            color: #000 !important; 
-        }
 
         .nav-link:hover, .nav-link.active {
-            color: #fff !important;
-            border-bottom: 2px solid #fff; 
+            color: #fff;
+            transform: translateY(-3px);
+            text-shadow: 
+            -0.5px -0.5px 0 #000,  
+            0.5px -0.5px 0 #000,
+            -0.5px  0.5px 0 #000,
+            1px  1px 0 #000;
         }
 
         .dashboard {
@@ -259,10 +261,10 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <a class="navbar-brand" style="font-weight: 500;">CyberFortress</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto " style="font-size: 1.4rem; padding-right: 25px;">
                         <li class="nav-item pe-4">
