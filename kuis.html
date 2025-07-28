@@ -57,18 +57,49 @@
   </style>
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg p-2 navbar-gradient fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <a class="navbar-brand" style="font-weight: 500;">CyberFortress</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto " style="font-size: 1.4rem; padding-right: 25px;">
+                    <li class="nav-item pe-4">
+                        <a class="nav-link" aria-current="page" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item pe-4">
+                        <a class="nav-link" href="kuis.html">Kuis</a>
+                    </li>
+                    <li class="nav-item pe-4">
+                        <a class="nav-link" href="statistik.html">Statistik</a>
+                    </li>
+                    <li class="nav-item pe-4">
+                        <a class="nav-link" href="video.html">Video</a>
+                    </li>
+                    <li class="nav-item pe-4">
+                        <a class="nav-link" href="hubungikami.html">Hubungi Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
-  <div class="corner-label">QUIZ</div>
+  <div class="corner-label" style="margin-top: 3rem;">QUIZ</div>
 
   <!-- Halaman Pembuka -->
-  <div id="start-screen" class="container text-center mt-5">
+  <div id="start-screen" class="container text-center" style="margin-top: 10rem;">
     <h2 class="mb-3">Selamat Datang di Kuis Cybercrime!</h2>
     <p>Uji pengetahuanmu tentang dunia kejahatan siber mulai dari Phishing hingga Hacking.</p>
     <button class="btn btn-primary btn-lg mt-4" onclick="startQuiz()">Mulai</button>
   </div>
 
   <!-- Level 1 -->
-  <div id="level1" class="container text-center mt-5 mb-5 hidden">
+  <div id="level1" class="container text-center mb-5 hidden" style="margin-top: 7rem;">
     <h5 class="mb-2">PHISHING</h5>
     <img src="phising_iwak.webp" alt="Phishing" class="quiz-image mb-3">
     <p class="mb-4">Apa itu phishing?</p>
@@ -87,7 +118,7 @@
   </div>
 
   <!-- Level 2 -->
-  <div id="level2" class="container text-center mt-5 mb-5 hidden">
+  <div id="level2" class="container text-center mb-5 hidden" style="margin-top: 7rem;">
     <h5 class="mb-2">HACKING</h5>
     <img src="hack2.jpeg" alt="hacking" class="quiz-image mb-3">
     <p class="mb-4">Apa itu hacking?</p>
@@ -106,7 +137,7 @@
   </div>
 
   <!-- Ucapan Selamat -->
-  <div id="congrats" class="container text-center mt-5 mb-5 hidden">
+  <div id="congrats" class="container text-center mb-5 hidden" style="margin-top: 7rem;">
     <div class="alert alert-success fw-bold">
       🎉 Selamat! Kamu telah menyelesaikan seluruh kuis Cybercrime dengan benar! 👏
     </div>
