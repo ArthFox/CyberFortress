@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kuis Cybercrime Gabungan</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      background-color: #155E95;
+      background-color: #e6faff;
       font-family: Arial, sans-serif;
     }
     .corner-label {
@@ -56,49 +55,22 @@
       display: none;
     }
   </style>
-  
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-  <header>
-    <nav class="navbar navbar-expand-lg p-2 navbar-gradient fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <a class="navbar-brand" style="font-weight: 500;">CyberFortress</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto " style="font-size: 1.4rem; padding-right: 25px;">
-                    <li class="nav-item pe-4">
-                        <a class="nav-link" aria-current="page" href="index.html">Beranda</a>
-                    </li>
-                    <li class="nav-item pe-4">
-                        <a class="nav-link" href="kuis.html">Kuis</a>
-                    </li>
-                    <li class="nav-item pe-4">
-                        <a class="nav-link" href="statistik.html">Statistik</a>
-                    </li>
-                    <li class="nav-item pe-4">
-                        <a class="nav-link" href="video.html">Video</a>
-                    </li>
-                    <li class="nav-item pe-4">
-                        <a class="nav-link" href="hubungikami.html">Hubungi Kami</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-  <main style="margin-top: 5rem;">
 
-  <div class="corner-label" style="margin-top: 4rem;">QUIZ</div>
+  <div class="corner-label">QUIZ</div>
+
+  <!-- Halaman Pembuka -->
+  <div id="start-screen" class="container text-center mt-5">
+    <h2 class="mb-3">Selamat Datang di Kuis Cybercrime!</h2>
+    <p>Uji pengetahuanmu tentang dunia kejahatan siber mulai dari Phishing hingga Hacking.</p>
+    <button class="btn btn-primary btn-lg mt-4" onclick="startQuiz()">Mulai</button>
+  </div>
 
   <!-- Level 1 -->
-  <div id="level1" class="container text-center mt-5 mb-5">
+  <div id="level1" class="container text-center mt-5 mb-5 hidden">
     <h5 class="mb-2">PHISHING</h5>
-      <img src="phising_iwak.webp" alt="Phishing" class="quiz-image mb-3">
+    <img src="phising_iwak.webp" alt="Phishing" class="quiz-image mb-3">
     <p class="mb-4">Apa itu phishing?</p>
 
     <div class="row">
@@ -117,7 +89,7 @@
   <!-- Level 2 -->
   <div id="level2" class="container text-center mt-5 mb-5 hidden">
     <h5 class="mb-2">HACKING</h5>
-      <img src="hack2.jpeg" alt="hacking" class="quiz-image mb-3">
+    <img src="hack2.jpeg" alt="hacking" class="quiz-image mb-3">
     <p class="mb-4">Apa itu hacking?</p>
 
     <div class="row">
@@ -140,10 +112,15 @@
     </div>
   </div>
 
-  <!-- Footer revisi -->
-  <div class="quiz-footer" > 2025 Cyberfortress | All Right Reserved</div>
+  <!-- Footer -->
+  <div class="quiz-footer">2025 Cyberfortress, All Right Reserved</div>
 
   <script>
+    function startQuiz() {
+      document.getElementById('start-screen').classList.add('hidden');
+      document.getElementById('level1').classList.remove('hidden');
+    }
+
     function checkAnswer(answer, level) {
       const correctAnswers = { 1: 'b', 2: 'b' };
       const result = document.getElementById('result' + level);
@@ -153,7 +130,6 @@
         result.className = "mt-3 fw-bold text-success";
         setTimeout(() => {
           document.getElementById('level' + level).classList.add('hidden');
-
           if (level === 1) {
             document.getElementById('level2').classList.remove('hidden');
           } else if (level === 2) {
@@ -166,6 +142,5 @@
       }
     }
   </script>
-  </main>
 </body>
 </html>
